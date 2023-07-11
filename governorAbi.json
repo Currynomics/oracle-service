@@ -1,0 +1,1492 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "implementation",
+        "type": "address"
+      }
+    ],
+    "name": "AssetsUpgraded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "int256",
+        "name": "cashFlow",
+        "type": "int256"
+      }
+    ],
+    "name": "CashFlow",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "origin",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "int256",
+        "name": "cashDelta",
+        "type": "int256"
+      },
+      {
+        "indexed": true,
+        "internalType": "int256",
+        "name": "nonCashDelta",
+        "type": "int256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "cashPosition",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "nonCashPosition",
+        "type": "uint256"
+      }
+    ],
+    "name": "NavChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      }
+    ],
+    "name": "RoleGranted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      }
+    ],
+    "name": "RoleRevoked",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "implementation",
+        "type": "address"
+      }
+    ],
+    "name": "TokenUpgraded",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "manager",
+        "type": "address"
+      }
+    ],
+    "name": "addAssetManager",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "manager",
+        "type": "address"
+      }
+    ],
+    "name": "addSupplyManager",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "assetDenominator",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [],
+    "name": "assetManagers",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokens",
+        "type": "uint256"
+      }
+    ],
+    "name": "burn",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "int256",
+        "name": "cashFlow",
+        "type": "int256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "sourceId",
+        "type": "uint256"
+      }
+    ],
+    "name": "burnUsingSource",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "cashAllowed",
+    "outputs": [
+      {
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [],
+    "name": "cashPosition",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "tokenId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "sourceId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "creator",
+            "type": "address"
+          },
+          {
+            "internalType": "address[]",
+            "name": "managers",
+            "type": "address[]"
+          },
+          {
+            "internalType": "bool",
+            "name": "supplyChanging",
+            "type": "bool"
+          },
+          {
+            "components": [
+              {
+                "internalType": "enum Types.Currency",
+                "name": "currency",
+                "type": "uint8"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oav",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "coa",
+                "type": "uint256"
+              },
+              {
+                "internalType": "int256",
+                "name": "ral",
+                "type": "int256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oa",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oavi",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oavr",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "bd",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint16",
+                "name": "oi",
+                "type": "uint16"
+              }
+            ],
+            "internalType": "struct Types.Value",
+            "name": "value",
+            "type": "tuple"
+          },
+          {
+            "internalType": "enum Types.AssetType",
+            "name": "assetType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "owner",
+            "type": "address"
+          },
+          {
+            "internalType": "enum Types.AssetSubType",
+            "name": "assetSubType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "enum Types.AssetStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "enum Types.OwnershipType",
+            "name": "ownershipType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastAuditedAt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "externalId",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct Types.Asset",
+        "name": "asset",
+        "type": "tuple"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokens",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "recepient",
+        "type": "address"
+      }
+    ],
+    "name": "create",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "tokenId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "sourceId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "creator",
+            "type": "address"
+          },
+          {
+            "internalType": "address[]",
+            "name": "managers",
+            "type": "address[]"
+          },
+          {
+            "internalType": "bool",
+            "name": "supplyChanging",
+            "type": "bool"
+          },
+          {
+            "components": [
+              {
+                "internalType": "enum Types.Currency",
+                "name": "currency",
+                "type": "uint8"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oav",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "coa",
+                "type": "uint256"
+              },
+              {
+                "internalType": "int256",
+                "name": "ral",
+                "type": "int256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oa",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oavi",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oavr",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "bd",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint16",
+                "name": "oi",
+                "type": "uint16"
+              }
+            ],
+            "internalType": "struct Types.Value",
+            "name": "value",
+            "type": "tuple"
+          },
+          {
+            "internalType": "enum Types.AssetType",
+            "name": "assetType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "owner",
+            "type": "address"
+          },
+          {
+            "internalType": "enum Types.AssetSubType",
+            "name": "assetSubType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "enum Types.AssetStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "enum Types.OwnershipType",
+            "name": "ownershipType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastAuditedAt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "externalId",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct Types.Asset",
+        "name": "asset",
+        "type": "tuple"
+      },
+      {
+        "internalType": "int256",
+        "name": "cashFlow",
+        "type": "int256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "sourceId",
+        "type": "uint256"
+      }
+    ],
+    "name": "createUsingSource",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getAssets",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [],
+    "name": "getNAPT",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [],
+    "name": "getToken",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "hasRole",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      }
+    ],
+    "name": "members",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [],
+    "name": "noSupplyChangeNavThreshold",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [],
+    "name": "nonCashPosition",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "manager",
+        "type": "address"
+      }
+    ],
+    "name": "removeAssetManager",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "manager",
+        "type": "address"
+      }
+    ],
+    "name": "removeSupplyManager",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "revokeAssets",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "revokeToken",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "assets_",
+        "type": "address"
+      }
+    ],
+    "name": "setAssets",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint8",
+        "name": "cashAllowed_",
+        "type": "uint8"
+      },
+      {
+        "internalType": "bool",
+        "name": "force",
+        "type": "bool"
+      }
+    ],
+    "name": "setCashAllowed",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "cashPosition_",
+        "type": "uint256"
+      }
+    ],
+    "name": "setCashPosition",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "threshold",
+        "type": "uint16"
+      }
+    ],
+    "name": "setNoSupplyChangeNavThreshold",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "nonCashPosition_",
+        "type": "uint256"
+      }
+    ],
+    "name": "setNonCashPosition",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token_",
+        "type": "address"
+      }
+    ],
+    "name": "setToken",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "treshold",
+        "type": "uint256"
+      }
+    ],
+    "name": "setTokenValidateThreshold",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "supplyManagers",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [],
+    "name": "tokenValidateThreshold",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [],
+    "name": "totalPosition",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "tokenId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "sourceId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "creator",
+            "type": "address"
+          },
+          {
+            "internalType": "address[]",
+            "name": "managers",
+            "type": "address[]"
+          },
+          {
+            "internalType": "bool",
+            "name": "supplyChanging",
+            "type": "bool"
+          },
+          {
+            "components": [
+              {
+                "internalType": "enum Types.Currency",
+                "name": "currency",
+                "type": "uint8"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oav",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "coa",
+                "type": "uint256"
+              },
+              {
+                "internalType": "int256",
+                "name": "ral",
+                "type": "int256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oa",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oavi",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oavr",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "bd",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint16",
+                "name": "oi",
+                "type": "uint16"
+              }
+            ],
+            "internalType": "struct Types.Value",
+            "name": "value",
+            "type": "tuple"
+          },
+          {
+            "internalType": "enum Types.AssetType",
+            "name": "assetType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "owner",
+            "type": "address"
+          },
+          {
+            "internalType": "enum Types.AssetSubType",
+            "name": "assetSubType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "enum Types.AssetStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "enum Types.OwnershipType",
+            "name": "ownershipType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastAuditedAt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "externalId",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct Types.Asset",
+        "name": "newAsset",
+        "type": "tuple"
+      },
+      {
+        "internalType": "int256",
+        "name": "tokens",
+        "type": "int256"
+      },
+      {
+        "internalType": "address",
+        "name": "recepient",
+        "type": "address"
+      }
+    ],
+    "name": "update",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "tokenId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "sourceId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "creator",
+            "type": "address"
+          },
+          {
+            "internalType": "address[]",
+            "name": "managers",
+            "type": "address[]"
+          },
+          {
+            "internalType": "bool",
+            "name": "supplyChanging",
+            "type": "bool"
+          },
+          {
+            "components": [
+              {
+                "internalType": "enum Types.Currency",
+                "name": "currency",
+                "type": "uint8"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oav",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "coa",
+                "type": "uint256"
+              },
+              {
+                "internalType": "int256",
+                "name": "ral",
+                "type": "int256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oa",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oavi",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oavr",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "bd",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint16",
+                "name": "oi",
+                "type": "uint16"
+              }
+            ],
+            "internalType": "struct Types.Value",
+            "name": "value",
+            "type": "tuple"
+          },
+          {
+            "internalType": "enum Types.AssetType",
+            "name": "assetType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "owner",
+            "type": "address"
+          },
+          {
+            "internalType": "enum Types.AssetSubType",
+            "name": "assetSubType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "enum Types.AssetStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "enum Types.OwnershipType",
+            "name": "ownershipType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastAuditedAt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "externalId",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct Types.Asset",
+        "name": "newAsset",
+        "type": "tuple"
+      },
+      {
+        "internalType": "int256",
+        "name": "cashFlow",
+        "type": "int256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "sourceId",
+        "type": "uint256"
+      }
+    ],
+    "name": "updateUsingSource",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "int256",
+        "name": "amount",
+        "type": "int256"
+      }
+    ],
+    "name": "changeSupply",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "tokenId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "sourceId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "creator",
+            "type": "address"
+          },
+          {
+            "internalType": "address[]",
+            "name": "managers",
+            "type": "address[]"
+          },
+          {
+            "internalType": "bool",
+            "name": "supplyChanging",
+            "type": "bool"
+          },
+          {
+            "components": [
+              {
+                "internalType": "enum Types.Currency",
+                "name": "currency",
+                "type": "uint8"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oav",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "coa",
+                "type": "uint256"
+              },
+              {
+                "internalType": "int256",
+                "name": "ral",
+                "type": "int256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oa",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oavi",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oavr",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "bd",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint16",
+                "name": "oi",
+                "type": "uint16"
+              }
+            ],
+            "internalType": "struct Types.Value",
+            "name": "value",
+            "type": "tuple"
+          },
+          {
+            "internalType": "enum Types.AssetType",
+            "name": "assetType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "owner",
+            "type": "address"
+          },
+          {
+            "internalType": "enum Types.AssetSubType",
+            "name": "assetSubType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "enum Types.AssetStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "enum Types.OwnershipType",
+            "name": "ownershipType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastAuditedAt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "externalId",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct Types.Asset",
+        "name": "asset",
+        "type": "tuple"
+      }
+    ],
+    "name": "changeAsset",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "tokenId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "sourceId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "creator",
+            "type": "address"
+          },
+          {
+            "internalType": "address[]",
+            "name": "managers",
+            "type": "address[]"
+          },
+          {
+            "internalType": "bool",
+            "name": "supplyChanging",
+            "type": "bool"
+          },
+          {
+            "components": [
+              {
+                "internalType": "enum Types.Currency",
+                "name": "currency",
+                "type": "uint8"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oav",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "coa",
+                "type": "uint256"
+              },
+              {
+                "internalType": "int256",
+                "name": "ral",
+                "type": "int256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oa",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oavi",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "oavr",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "bd",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint16",
+                "name": "oi",
+                "type": "uint16"
+              }
+            ],
+            "internalType": "struct Types.Value",
+            "name": "value",
+            "type": "tuple"
+          },
+          {
+            "internalType": "enum Types.AssetType",
+            "name": "assetType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "owner",
+            "type": "address"
+          },
+          {
+            "internalType": "enum Types.AssetSubType",
+            "name": "assetSubType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "enum Types.AssetStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "enum Types.OwnershipType",
+            "name": "ownershipType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastAuditedAt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "externalId",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct Types.Asset",
+        "name": "asset",
+        "type": "tuple"
+      }
+    ],
+    "name": "createAsset",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "closePermanent",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "isOpen",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  }
+]

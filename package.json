@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.3.0",
+    "moralis": "^2.22.3",
+    "dotenv": "^16.3.1"
+  },
+  "name": "treasury-stats",
+  "version": "1.0.0",
+  "description": "Treasury reserves oracle services",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "functions-framework --target=getTreasuryStats"
+  },
+  "author": "",
+  "license": "ISC"
+}
